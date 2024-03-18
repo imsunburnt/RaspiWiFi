@@ -4,7 +4,7 @@ import time
 import subprocess
 import reset_lib
 
-WIFI_RESET_PIN = 21
+WIFI_RESET_PIN = 18
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(WIFI_RESET_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
