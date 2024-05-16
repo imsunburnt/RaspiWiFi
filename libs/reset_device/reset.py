@@ -4,7 +4,6 @@ import time
 import subprocess
 import reset_lib
 
-<<<<<<< HEAD
 import requests
 from luma.led_matrix.device import max7219
 from luma.core.interface.serial import spi, noop
@@ -28,9 +27,6 @@ PLAY_MUSIC = "http://pi02-2:3000/play_music"
 
 WIFI_RESET_PIN = 18
 COUNTDOWN = 5
-=======
-WIFI_RESET_PIN = 18
->>>>>>> 080322450e79d880e753e4dada097679dc8873e8
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(WIFI_RESET_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
