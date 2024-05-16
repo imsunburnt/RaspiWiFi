@@ -1,0 +1,41 @@
+File: raspi-notes.txt
+
+4-8-2024
+
+RaspiWiFi files and folders.  Webapp design.
+
+/home/pi/RaspiWifi
+	/libs
+		/configuration_app
+			/static/stylesheets
+				app.css
+			/templates
+				app.html
+				layout.html
+				manual_ssid_entry.html
+				save_credentials.html
+				save_wpa_sredentials.html
+				wpa_settings.html
+			app.py
+		/reset_device
+			/static_files
+				apclient_bootstrapper
+				aphost_bootstrapper
+				dhcpcd.conf
+				dhcpcd.conf.dac
+				dnsmasq.conf
+				hostapd.conf.nowpa
+				hostapd.conf.wpa
+				raspiwifi.conf
+				wpa_spplicant.conf.default
+			button_chime.wav
+			connection_monitor.py
+			manual_reset.py
+			reset.py
+			reset.py.orig
+			reset_lib.py
+		uninstall.py
+	initial_setup.py
+	raspi-notes.txt
+	Readme.txt
+	setup_lib.py
