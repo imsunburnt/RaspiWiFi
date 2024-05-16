@@ -121,11 +121,11 @@ Configuration Mode. All services will be addresible in their normal way at
 
 RESETTING THE DEVICE:
 
-== If GPIO 18 is pulled HIGH for 10 seconds or more the Raspberry Pi will reset
+== If GPIO WIFI_RESET_PIN is pulled HIGH for 5 seconds or more the Raspberry Pi will reset
 all settings, reboot, and enter "Configuration Mode" again. It's useful to have
-a simple button wired on GPIO 18 to reset easily if moving to a new location,
+a simple button wired on GPIO WIFI_RESET_PIN to reset easily if moving to a new location,
 or if incorrect connection information is ever entered. Just press and hold for
-10 seconds or longer.
+5 seconds or longer.
 
 == You can also reset the device by running the manual_reset.py in the
 /usr/lib/raspiwifi/reset_device directory as root or with sudo.
