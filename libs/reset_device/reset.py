@@ -22,8 +22,8 @@ device = max7219(serial, cascaded=4, block_orientation=90, rotate=0, blocks_arra
 # data = r.json()
 
 # api-endpoint
-HALT_SCROLLER = "http://pi02-2:3000/halt_scroller"
-PLAY_MUSIC = "http://pi02-2:3000/play_music"
+HALT_SCROLLER = "http://pi02-3:3000/halt_scroller"
+PLAY_MUSIC = "http://pi02-3:3000/play_music"
 
 WIFI_RESET_PIN = 18
 COUNTDOWN = 5
