@@ -30,8 +30,12 @@ PLAY_MUSIC = "http://" + hostname + ":3000/play_music"
 WIFI_RESET_PIN = 18
 COUNTDOWN = 5
 
+#=========================================================================
+# DAC 5/28/2024 Change WIFI_RESET_PIN to pull_up and detect for active low
+#=========================================================================
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(WIFI_RESET_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+#GPIO.setup(WIFI_RESET_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(WIFI_RESET_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 counter = COUNTDOWN
 serial_last_four = subprocess.check_output(['cat', '/proc/cpuinfo'])[-5:-1].decode('utf-8')
@@ -49,7 +53,8 @@ if reboot_required == True:
 # This is the main logic loop waiting for a button to be pressed on WIFI_RESET_PIN for 5 seconds.
 # If that happens the device will reset to its AP Host mode allowing for reconfiguration on a new network.
 while True:
-    while GPIO.input(WIFI_RESET_PIN) == 1:
+    #while GPIO.input(WIFI_RESET_PIN) == 1:
+    while GPIO.input(WIFI_RESET_PIN) == 0:
 
         if(counter == COUNTDOWN):
             r = requests.get(url=HALT_SCROLLER)
@@ -79,7 +84,8 @@ while True:
             reset_lib.reset_to_host_mode()
             break
 
-        if GPIO.input(WIFI_RESET_PIN) == 0:
+        #if GPIO.input(WIFI_RESET_PIN) == 0:
+        if GPIO.input(WIFI_RESET_PIN) == 1:
             counter = COUNTDOWN
             Tv = " "
             Tv = Tv.rjust(4, " ")
